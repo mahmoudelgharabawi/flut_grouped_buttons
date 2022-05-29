@@ -82,9 +82,11 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
           children: dataMap
               .map(
                 (e) => SizedBox(
-                  width: 70,
+                  width: 130,
                   height: 50,
                   child: ListTile(
+                    minVerticalPadding: 5,
+                    horizontalTitleGap: 0,
                     title: Transform(
                       transform: Matrix4.translationValues(
                           widget.titleCheckSpace, 0.0, 0.0),
