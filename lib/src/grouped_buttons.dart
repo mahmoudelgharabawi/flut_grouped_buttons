@@ -78,10 +78,12 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
   Widget build(BuildContext context) {
     if (dataMap.isNotEmpty) {
       if (widget.isRow) {
-        return Row(
+        return Wrap(
           children: dataMap
               .map(
-                (e) => Expanded(
+                (e) => SizedBox(
+                  width: 70,
+                  height: 50,
                   child: ListTile(
                     title: Transform(
                       transform: Matrix4.translationValues(
