@@ -171,9 +171,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
             .toList(),
       );
     } else {
-      return Container(
-        child: const Text('Error in Created Group Buttons'),
-      );
+      return const Text('Error in Created Group Buttons');
     }
   }
 
