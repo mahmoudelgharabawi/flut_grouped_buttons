@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           valueKey: 'value',
           titleCheckSpace: 0,
           isRadio: true,
-          isRow: true,
+          // isRow: true,
           data: [
             {'id': '15', 'value': '15 دقائق'},
             {'id': '30', 'value': '30 دقائق'},

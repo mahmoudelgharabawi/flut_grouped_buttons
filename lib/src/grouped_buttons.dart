@@ -85,6 +85,11 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                   width: 130,
                   height: 50,
                   child: ListTile(
+                    onTap: () {
+                      widget.isRadio
+                          ? onChangedRadio(!e['isChecked'], e)
+                          : onChangedCheckBox(!e['isChecked'], e);
+                    },
                     minVerticalPadding: 5,
                     horizontalTitleGap: 0,
                     title: Transform(
@@ -134,6 +139,13 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
         children: dataMap
             .map(
               (e) => ListTile(
+                onTap: () {
+                  widget.isRadio
+                      ? onChangedRadio(!e['isChecked'], e)
+                      : onChangedCheckBox(!e['isChecked'], e);
+                },
+                minVerticalPadding: 5,
+                horizontalTitleGap: 0,
                 title: Transform(
                   transform: Matrix4.translationValues(
                       widget.titleCheckSpace, 0.0, 0.0),
