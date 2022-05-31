@@ -217,18 +217,18 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
         element['isChecked'] = false;
       }
       e['isChecked'] = value ?? false;
+      if (!e['isChecked']) {
+        widget.onChanged(null);
+      } else {
+        widget.onChanged(e[widget.idKey ?? 'value']);
+      }
     });
 
-    if (widget.valueKey != null && widget.idKey != null) {
-      var result = dataMap
-          .map((e) => {
-                widget.idKey: e[widget.idKey],
-                widget.valueKey: e[widget.valueKey]
-              })
-          .first;
-      widget.onChanged(result);
-      return;
-    }
-    widget.onChanged(e['value']);
+    // if (widget.valueKey != null && widget.idKey != null) {
+    //   var result = dataMap.first((e) =>
+    //       {widget.idKey: e[widget.idKey], widget.valueKey: e[widget.valueKey]});
+    //   widget.onChanged(result);
+    //   return;
+    // }
   }
 }
