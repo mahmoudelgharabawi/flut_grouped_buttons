@@ -31,67 +31,111 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          FlutGroupedButtons<Map<String, String>>(
-            idKey: 'id',
-            valueKey: 'value',
-            titleCheckSpace: 0,
-            isRadio: true,
-            isRow: true,
-            data: [
-              {'id': '15', 'value': '15 دقائق'},
-              {'id': '30', 'value': '30 دقائق'},
-              {'id': '45', 'value': '45 دقائق'},
-              {'id': '60', 'value': '1 ساعة'},
-              {'id': '120', 'value': '2 ساعة'},
-              {'id': '180', 'value': '3 ساعة'},
-            ],
-            onChanged: (value) {
-              print(value);
-            },
-          ),
-          FlutGroupedButtons<Map<String, String>>(
-            idKey: 'idex',
-            valueKey: 'result',
-            titleCheckSpace: 0,
-            isRadio: true,
-            isRow: true,
-            data: [
-              {'idex': '15', 'result': '15 دقائق'},
-              {'idex': '30', 'result': '30 دقائق'},
-              {'idex': '45', 'result': '45 دقائق'},
-              {'idex': '60', 'result': '1 ساعة'},
-              {'idex': '120', 'result': '2 ساعة'},
-              {'idex': '180', 'result': '3 ساعة'},
-            ],
-            onChanged: (value) {
-              print(value);
-            },
-          ),
-          FlutGroupedButtons<String>(
-            titleCheckSpace: 0,
-            isRadio: true,
-            // isRow: true,
-            data: const [
-              'test',
-              'test2',
-              'test3',
-              'test4',
-            ],
-            onChanged: (value) {
-              print(value);
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Check Box Example',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutGroupedButtons<String>(
+                      data: const [
+                        "Saturday",
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                      ],
+                      onChanged: (value) => print(value),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutGroupedButtons<Map<String, String>>(
+                      idKey: 'id',
+                      valueKey: 'result',
+                      data: const [
+                        {"id": 'id1', "result": "Saturday"},
+                        {"id": 'id2', "result": "Sunday"},
+                        {"id": 'id3', "result": "Monday"},
+                        {"id": 'id4', "result": "Tuesday"},
+                        {"id": 'id5', "result": "Wednesday"},
+                        {"id": 'id6', "result": "Thursday"},
+                        {"id": 'id7', "result": "Friday"},
+                      ],
+                      onChanged: (value) => print(value),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Radio Button Example',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutGroupedButtons<String>(
+                      isRadio: true,
+                      data: const [
+                        "Saturday",
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                      ],
+                      onChanged: (value) => print(value),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutGroupedButtons<Map<String, String>>(
+                      isRadio: true,
+                      idKey: 'id',
+                      valueKey: 'result',
+                      data: const [
+                        {"id": 'id1', "result": "Saturday"},
+                        {"id": 'id2', "result": "Sunday"},
+                        {"id": 'id3', "result": "Monday"},
+                        {"id": 'id4', "result": "Tuesday"},
+                        {"id": 'id5', "result": "Wednesday"},
+                        {"id": 'id6', "result": "Thursday"},
+                        {"id": 'id7', "result": "Friday"},
+                      ],
+                      onChanged: (value) => print(value),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

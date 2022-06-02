@@ -1,39 +1,102 @@
+# flut_grouped_buttons
+
+Only a single Flutter widgets that makes group Checkboxes and Radio Buttons in Very Easy Way!
+
+## Installing
+
+Add the following to your `pubspec.yaml` file:
+
+    dependencies:
+        flut_grouped_buttons: ^0.0.5
+
+## Simple Usage
+#### Creating a basic `CheckBox` with string list
+
+    FlutGroupedButtons<String>(
+      data: <String>[
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      onSelected: (List<String> checked) => print(checked.toString())
+    );
+
+#### Creating a basic `CheckBox` with map list
+
+    FlutGroupedButtons<Map<String, String>>(
+        idKey: 'id',
+        valueKey: 'result',
+        data: const [
+        {"id": 'id1', "result": "Saturday"},
+        {"id": 'id2', "result": "Sunday"},
+        {"id": 'id3', "result": "Monday"},
+        {"id": 'id4', "result": "Tuesday"},
+        {"id": 'id5', "result": "Wednesday"},
+        {"id": 'id6', "result": "Thursday"},
+        {"id": 'id7', "result": "Friday"},
+        ],
+        onChanged: (value) => print(value),
+    ),
+
+#### Creating a basic `RadioButton` with string list
+
+    FlutGroupedButtons<String>(
+        isRadio: true,
+      data: <String>[
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      onSelected: (List<String> checked) => print(checked.toString())
+    );
+
+
+#### Creating a basic `RadioButton` with map list here the return value is the value of idKey you iserted
+
+    FlutGroupedButtons<Map<String, String>>(
+        isRadio: true,
+        idKey: 'id',
+        valueKey: 'result',
+        data: const [
+        {"id": 'id1', "result": "Saturday"},
+        {"id": 'id2', "result": "Sunday"},
+        {"id": 'id3', "result": "Monday"},
+        {"id": 'id4', "result": "Tuesday"},
+        {"id": 'id5', "result": "Wednesday"},
+        {"id": 'id6', "result": "Thursday"},
+        {"id": 'id7', "result": "Friday"},
+        ],
+        onChanged: (value) => print(value),
+    ),
+
 <!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+#### Screenshot
+<img width="250px" src="https://raw.githubusercontent.com/akshathjain/grouped_buttons/master/screenshots/basicusagescreenshot.png" alt="Basic Usage"/> -->
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+<!-- ## Custom Usage
+There are several options that allow for more control. -->
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+#### Properties `FlutGroupedButtons`
+|   Properties  |  Description |
+|---------------|--------------|
+|`isRadio`  |If it's true Activate The Radio Button Widget.  |
+|`isRow`   |If it's true it will be Row.   |
+|`idKey`      |Specifies the id key value when you use map input for data only use for map . |
+| `valueKey`    |Specifies the value key in your map input for data only use for map. |
+|`activeColor`  |The active color you choose.   |
+|`checkColor`   |The check color you choose.   |
+|`labelStyle`   |The Style for your text.   |
+|`checkShape`   |The outlined shape you choose for your check shape.   |
+|`titleCheckSpace`|The space between your title and your checkbox.   |
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+#### Screenshot
+<img width="250px" src="https://res.cloudinary.com/m-a-h-g/image/upload/v1654159243/example_dbyyip.png" alt="Basic Usage"/>

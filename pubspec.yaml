@@ -1,7 +1,7 @@
 name: flut_grouped_buttons
 description: CheckBox And RadioButton Made Easy To Use With Flutter.
-version: 0.0.5
-homepage:
+version: 0.0.6
+homepage: https://github.com/mahmoudelgharabawi/flut_grouped_buttons
 
 environment:
   sdk: ">=2.17.0 <3.0.0"

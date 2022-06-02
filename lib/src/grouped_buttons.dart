@@ -7,9 +7,6 @@ class FlutGroupedButtons<T> extends StatefulWidget {
   /// The Return Data Action
   final void Function(dynamic) onChanged;
 
-  /// Enable The Ability To Cancel The Radio Checked
-  final bool canRadioUnCheck;
-
   /// Use Group Button As Radio Button
   final bool isRadio;
 
@@ -43,7 +40,6 @@ class FlutGroupedButtons<T> extends StatefulWidget {
       {required this.data,
       required this.onChanged,
       this.isRadio = false,
-      this.canRadioUnCheck = false,
       this.isRow = false,
       this.idKey,
       this.activeColor,
@@ -105,10 +101,8 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                     leading: widget.isRadio
                         ? IgnorePointer(
                             ignoring: (!dataMap.every((element) =>
-                                        element['isChecked'] == false)) &&
-                                    widget.canRadioUnCheck
-                                ? !e['isChecked']
-                                : e['isChecked'],
+                                    element['isChecked'] == false)) &&
+                                e['isChecked'],
                             child: Checkbox(
                                 checkColor: widget.checkColor,
                                 activeColor: widget.activeColor ??
@@ -158,11 +152,9 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                 ),
                 leading: widget.isRadio
                     ? IgnorePointer(
-                        ignoring: (!dataMap.every((element) =>
-                                    element['isChecked'] == false)) &&
-                                widget.canRadioUnCheck
-                            ? !e['isChecked']
-                            : e['isChecked'],
+                        ignoring: (!dataMap.every(
+                                (element) => element['isChecked'] == false)) &&
+                            e['isChecked'],
                         child: Checkbox(
                             checkColor: widget.checkColor,
                             activeColor: widget.activeColor ??
