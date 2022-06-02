@@ -1,13 +1,14 @@
 # flut_grouped_buttons
 
-Only a single Flutter widgets that makes group Checkboxes and Radio Buttons in Very Easy Way!
+Only a single Flutter widgets that makes Checkboxes and Radio Buttons with string you provided
+And you can to provide idvalue which you wish you get in Very Easy Way!
 
 ## Installing
 
 Add the following to your `pubspec.yaml` file:
 
     dependencies:
-        flut_grouped_buttons: ^0.0.5
+        flut_grouped_buttons: ^0.0.7
 
 ## Simple Usage
 #### Creating a basic `CheckBox` with string list
@@ -22,24 +23,24 @@ Add the following to your `pubspec.yaml` file:
         "Thursday",
         "Friday",
       ],
-      onSelected: (List<String> checked) => print(checked.toString())
+      onSelected: (checked) => print(checked)
     );
 
 #### Creating a basic `CheckBox` with map list
 
     FlutGroupedButtons<Map<String, String>>(
         idKey: 'id',
-        valueKey: 'result',
+        valueKey: 'name',
         data: const [
-        {"id": 'id1', "result": "Saturday"},
-        {"id": 'id2', "result": "Sunday"},
-        {"id": 'id3', "result": "Monday"},
-        {"id": 'id4', "result": "Tuesday"},
-        {"id": 'id5', "result": "Wednesday"},
-        {"id": 'id6', "result": "Thursday"},
-        {"id": 'id7', "result": "Friday"},
+        {"id": 'id1', "name": "Saturday"},
+        {"id": 'id2', "name": "Sunday"},
+        {"id": 'id3', "name": "Monday"},
+        {"id": 'id4', "name": "Tuesday"},
+        {"id": 'id5', "name": "Wednesday"},
+        {"id": 'id6', "name": "Thursday"},
+        {"id": 'id7', "name": "Friday"},
         ],
-        onChanged: (value) => print(value),
+        onChanged: (id) => print(id),
     ),
 
 #### Creating a basic `RadioButton` with string list
@@ -55,7 +56,7 @@ Add the following to your `pubspec.yaml` file:
         "Thursday",
         "Friday",
       ],
-      onSelected: (List<String> checked) => print(checked.toString())
+      onSelected: (checked) => print(checked)
     );
 
 
@@ -64,17 +65,17 @@ Add the following to your `pubspec.yaml` file:
     FlutGroupedButtons<Map<String, String>>(
         isRadio: true,
         idKey: 'id',
-        valueKey: 'result',
+        valueKey: 'name',
         data: const [
-        {"id": 'id1', "result": "Saturday"},
-        {"id": 'id2', "result": "Sunday"},
-        {"id": 'id3', "result": "Monday"},
-        {"id": 'id4', "result": "Tuesday"},
-        {"id": 'id5', "result": "Wednesday"},
-        {"id": 'id6', "result": "Thursday"},
-        {"id": 'id7', "result": "Friday"},
+        {"id": 'id1', "name": "Saturday"},
+        {"id": 'id2', "name": "Sunday"},
+        {"id": 'id3', "name": "Monday"},
+        {"id": 'id4', "name": "Tuesday"},
+        {"id": 'id5', "name": "Wednesday"},
+        {"id": 'id6', "name": "Thursday"},
+        {"id": 'id7', "name": "Friday"},
         ],
-        onChanged: (value) => print(value),
+        onChanged: (id) => print(id),
     ),
 
 <!-- 
@@ -99,4 +100,4 @@ There are several options that allow for more control. -->
 
 
 #### Screenshot
-<img width="250px" src="https://res.cloudinary.com/m-a-h-g/image/upload/v1654159243/example_dbyyip.png" alt="Basic Usage"/>
+<img width="250px" src="https://res.cloudinary.com/m-a-h-g/image/upload/v1654161156/example_xq6se8.png" alt="Basic Usage"/>

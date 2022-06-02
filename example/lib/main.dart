@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'flut_grouped_buttons'),
     );
   }
 }
@@ -66,23 +66,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       onChanged: (value) => print(value),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlutGroupedButtons<Map<String, String>>(
-                      idKey: 'id',
-                      valueKey: 'result',
-                      data: const [
-                        {"id": 'id1', "result": "Saturday"},
-                        {"id": 'id2', "result": "Sunday"},
-                        {"id": 'id3', "result": "Monday"},
-                        {"id": 'id4', "result": "Tuesday"},
-                        {"id": 'id5', "result": "Wednesday"},
-                        {"id": 'id6', "result": "Thursday"},
-                        {"id": 'id7', "result": "Friday"},
-                      ],
-                      onChanged: (value) => print(value),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: FlutGroupedButtons<Map<String, String>>(
+                  //     idKey: 'id',
+                  //     valueKey: 'name',
+                  //     data: const [
+                  //       {"id": 'id1', "name": "Saturday"},
+                  //       {"id": 'id2', "name": "Sunday"},
+                  //       {"id": 'id3', "name": "Monday"},
+                  //       {"id": 'id4', "name": "Tuesday"},
+                  //       {"id": 'id5', "name": "Wednesday"},
+                  //       {"id": 'id6', "name": "Thursday"},
+                  //       {"id": 'id7', "name": "Friday"},
+                  //     ],
+                  //     onChanged: (id) => print(id),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -113,24 +113,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       onChanged: (value) => print(value),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlutGroupedButtons<Map<String, String>>(
-                      isRadio: true,
-                      idKey: 'id',
-                      valueKey: 'result',
-                      data: const [
-                        {"id": 'id1', "result": "Saturday"},
-                        {"id": 'id2', "result": "Sunday"},
-                        {"id": 'id3', "result": "Monday"},
-                        {"id": 'id4', "result": "Tuesday"},
-                        {"id": 'id5', "result": "Wednesday"},
-                        {"id": 'id6', "result": "Thursday"},
-                        {"id": 'id7', "result": "Friday"},
-                      ],
-                      onChanged: (value) => print(value),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: FlutGroupedButtons<Map<String, String>>(
+                  //     isRadio: true,
+                  //     idKey: 'id',
+                  //     valueKey: 'name',
+                  //     data: const [
+                  //       {"id": 'id1', "name": "Saturday"},
+                  //       {"id": 'id2', "name": "Sunday"},
+                  //       {"id": 'id3', "name": "Monday"},
+                  //       {"id": 'id4', "name": "Tuesday"},
+                  //       {"id": 'id5', "name": "Wednesday"},
+                  //       {"id": 'id6', "name": "Thursday"},
+                  //       {"id": 'id7', "name": "Friday"},
+                  //     ],
+                  //     onChanged: (value) => print(value),
+                  //   ),
+                  // ),
                 ],
               ),
             )
