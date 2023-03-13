@@ -4,6 +4,9 @@ class FlutGroupedButtons<T> extends StatefulWidget {
   /// Data you want to list
   final List<T> data;
 
+  /// Data to be selected as default not working when (isRadio = true)
+  final List<T>? selectedList;
+
   /// The Return Data Action
   final void Function(dynamic) onChanged;
 
@@ -36,9 +39,16 @@ class FlutGroupedButtons<T> extends StatefulWidget {
   /// Change Outlined Shape Of Your Check Box
   final OutlinedBorder? checkShape;
 
+  /// Item width in case if using row
+  final double? rowItemwidth;
+
+  /// Item height in case if using row
+  final double? rowItemHeight;
+
   const FlutGroupedButtons(
       {required this.data,
       required this.onChanged,
+      this.selectedList,
       this.isRadio = false,
       this.isRow = false,
       this.idKey,
@@ -48,6 +58,8 @@ class FlutGroupedButtons<T> extends StatefulWidget {
       this.labelStyle,
       this.titleCheckSpace = 0,
       this.checkShape,
+      this.rowItemwidth = 130,
+      this.rowItemHeight = 50,
       Key? key})
       : super(key: key);
 
@@ -63,10 +75,31 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
     if (widget.idKey == null && widget.valueKey == null) {
       dataMap =
           widget.data.map((e) => {'value': e, "isChecked": false}).toList();
-      return;
+    } else {
+      var _converted =
+          widget.data.map((e) => e as Map<String, dynamic>).toList();
+      dataMap = _converted.map((e) => {...e, 'isChecked': false}).toList();
     }
-    var _converted = widget.data.map((e) => e as Map<String, dynamic>).toList();
-    dataMap = _converted.map((e) => {...e, 'isChecked': false}).toList();
+
+    // to obtain selected values for data
+    if (widget.selectedList != null &&
+        (widget.selectedList?.isNotEmpty ?? false) &&
+        !widget.isRadio) {
+      for (var selectedItem in widget.selectedList!) {
+        var index = dataMap.indexWhere((element) =>
+            (widget.valueKey != null
+                ? element[widget.valueKey]
+                : element['value']) ==
+            (widget.valueKey != null
+                ? (selectedItem as Map<String, dynamic>)[widget.valueKey]
+                : selectedItem));
+
+        dataMap[index]['isChecked'] = true;
+
+        dataChecked.add(
+            widget.valueKey != null ? dataMap[index] : dataMap[index]['value']);
+      }
+    }
     super.initState();
   }
 
@@ -78,8 +111,8 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
           children: dataMap
               .map(
                 (e) => SizedBox(
-                  width: 130,
-                  height: 50,
+                  width: widget.rowItemwidth,
+                  height: widget.rowItemHeight,
                   child: ListTile(
                     onTap: () {
                       widget.isRadio

@@ -51,89 +51,101 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlutGroupedButtons<String>(
-                      data: const [
-                        "Saturday",
-                        "Sunday",
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                      ],
-                      onChanged: (value) => print(value),
-                    ),
-                  ),
                   // Padding(
                   //   padding: const EdgeInsets.all(8.0),
-                  //   child: FlutGroupedButtons<Map<String, String>>(
-                  //     idKey: 'id',
-                  //     valueKey: 'name',
+                  //   child: FlutGroupedButtons<String>(
                   //     data: const [
-                  //       {"id": 'id1', "name": "Saturday"},
-                  //       {"id": 'id2', "name": "Sunday"},
-                  //       {"id": 'id3', "name": "Monday"},
-                  //       {"id": 'id4', "name": "Tuesday"},
-                  //       {"id": 'id5', "name": "Wednesday"},
-                  //       {"id": 'id6', "name": "Thursday"},
-                  //       {"id": 'id7', "name": "Friday"},
+                  //       "Saturday",
+                  //       "Sunday",
+                  //       "Monday",
+                  //       "Tuesday",
+                  //       "Wednesday",
+                  //       "Thursday",
+                  //       "Friday",
                   //     ],
-                  //     onChanged: (id) => print(id),
-                  //   ),
-                  // ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Radio Button Example',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlutGroupedButtons<String>(
-                      isRadio: true,
-                      data: const [
-                        "Saturday",
-                        "Sunday",
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                      ],
-                      onChanged: (value) => print(value),
-                    ),
-                  ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: FlutGroupedButtons<Map<String, String>>(
-                  //     isRadio: true,
-                  //     idKey: 'id',
-                  //     valueKey: 'name',
-                  //     data: const [
-                  //       {"id": 'id1', "name": "Saturday"},
-                  //       {"id": 'id2', "name": "Sunday"},
-                  //       {"id": 'id3', "name": "Monday"},
-                  //       {"id": 'id4', "name": "Tuesday"},
-                  //       {"id": 'id5', "name": "Wednesday"},
-                  //       {"id": 'id6', "name": "Thursday"},
-                  //       {"id": 'id7', "name": "Friday"},
+                  //     selectedList: [
+                  //       "Monday",
+                  //       "Friday",
                   //     ],
                   //     onChanged: (value) => print(value),
                   //   ),
                   // ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlutGroupedButtons<Map<String, String>>(
+                      idKey: 'id',
+                      valueKey: 'name',
+                      data: const [
+                        {"id": 'id1', "name": "Saturday"},
+                        {"id": 'id2', "name": "Sunday"},
+                        {"id": 'id3', "name": "Monday"},
+                        {"id": 'id4', "name": "Tuesday"},
+                        {"id": 'id5', "name": "Wednesday"},
+                        {"id": 'id6', "name": "Thursday"},
+                        {"id": 'id7', "name": "Friday"},
+                      ],
+                      selectedList: [
+                        {"id": 'id1', "name": "Saturday"},
+                        {"id": 'id7', "name": "Friday"},
+                      ],
+                      onChanged: (id) => print(id),
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
+            // Expanded(
+            //   child: Column(
+            //     children: [
+            //       const Padding(
+            //         padding: EdgeInsets.all(8.0),
+            //         child: Text(
+            //           'Radio Button Example',
+            //           style:
+            //               TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            //         ),
+            //       ),
+            //       Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: FlutGroupedButtons<String>(
+            //           isRadio: true,
+            //           data: const [
+            //             "Saturday",
+            //             "Sunday",
+            //             "Monday",
+            //             "Tuesday",
+            //             "Wednesday",
+            //             "Thursday",
+            //             "Friday",
+            //           ],
+            //           selectedList: [
+            //             "Monday",
+            //             "Friday",
+            //           ],
+            //           onChanged: (value) => print(value),
+            //         ),
+            //       ),
+            //       // Padding(
+            //       //   padding: const EdgeInsets.all(8.0),
+            //       //   child: FlutGroupedButtons<Map<String, String>>(
+            //       //     isRadio: true,
+            //       //     idKey: 'id',
+            //       //     valueKey: 'name',
+            //       //     data: const [
+            //       //       {"id": 'id1', "name": "Saturday"},
+            //       //       {"id": 'id2', "name": "Sunday"},
+            //       //       {"id": 'id3', "name": "Monday"},
+            //       //       {"id": 'id4', "name": "Tuesday"},
+            //       //       {"id": 'id5', "name": "Wednesday"},
+            //       //       {"id": 'id6', "name": "Thursday"},
+            //       //       {"id": 'id7', "name": "Friday"},
+            //       //     ],
+            //       //     onChanged: (value) => print(value),
+            //       //   ),
+            //       // ),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),
