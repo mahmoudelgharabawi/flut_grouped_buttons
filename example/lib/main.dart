@@ -70,24 +70,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   //     onChanged: (value) => print(value),
                   //   ),
                   // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: FlutGroupedButtons<Map<String, String>>(
+                  //     idKey: 'id',
+                  //     valueKey: 'name',
+                  //     data: const [
+                  //       {"id": 'id1', "name": "Saturday"},
+                  //       {"id": 'id2', "name": "Sunday"},
+                  //       {"id": 'id3', "name": "Monday"},
+                  //       {"id": 'id4', "name": "Tuesday"},
+                  //       {"id": 'id5', "name": "Wednesday"},
+                  //       {"id": 'id6', "name": "Thursday"},
+                  //       {"id": 'id7', "name": "Friday"},
+                  //     ],
+                  //     selectedList: [
+                  //       {"id": 'id1', "name": "Saturday"},
+                  //       {"id": 'id7', "name": "Friday"},
+                  //     ],
+                  //     onChanged: (id) => print(id),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: FlutGroupedButtons<Map<String, String>>(
-                      idKey: 'id',
-                      valueKey: 'name',
-                      data: const [
-                        {"id": 'id1', "name": "Saturday"},
-                        {"id": 'id2', "name": "Sunday"},
-                        {"id": 'id3', "name": "Monday"},
-                        {"id": 'id4', "name": "Tuesday"},
-                        {"id": 'id5', "name": "Wednesday"},
-                        {"id": 'id6', "name": "Thursday"},
-                        {"id": 'id7', "name": "Friday"},
+                    child: FlutGroupedButtons<String>(
+                      isRadio: true,
+                      data: [
+                        "Saturday",
+                        "Friday",
+                        "Saturday",
                       ],
-                      selectedList: [
-                        {"id": 'id1', "name": "Saturday"},
-                        {"id": 'id7', "name": "Friday"},
-                      ],
+                      selectedList: ["Saturday"],
                       onChanged: (id) => print(id),
                     ),
                   ),

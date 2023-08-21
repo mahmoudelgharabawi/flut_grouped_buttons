@@ -4,7 +4,7 @@ class FlutGroupedButtons<T> extends StatefulWidget {
   /// Data you want to list
   final List<T> data;
 
-  /// Data to be selected as default not working when (isRadio = true)
+  /// Data to be selected as default
   final List<T>? selectedList;
 
   /// The Return Data Action
@@ -83,8 +83,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
 
     // to obtain selected values for data
     if (widget.selectedList != null &&
-        (widget.selectedList?.isNotEmpty ?? false) &&
-        !widget.isRadio) {
+        (widget.selectedList?.isNotEmpty ?? false)) {
       for (var selectedItem in widget.selectedList!) {
         var index = dataMap.indexWhere((element) =>
             (widget.valueKey != null
