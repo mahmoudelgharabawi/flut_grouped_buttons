@@ -138,7 +138,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                             child: Checkbox(
                                 checkColor: widget.checkColor,
                                 activeColor: widget.activeColor ??
-                                    Theme.of(context).toggleableActiveColor,
+                                    Theme.of(context).colorScheme.primary,
                                 shape:
                                     widget.checkShape ?? const StadiumBorder(),
                                 value: e['isChecked'],
@@ -150,7 +150,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                             shape: widget.checkShape,
                             checkColor: widget.checkColor,
                             activeColor: widget.activeColor ??
-                                Theme.of(context).toggleableActiveColor,
+                                Theme.of(context).colorScheme.primary,
                             value: e['isChecked'],
                             onChanged: (value) {
                               onChangedCheckBox(value, e);
@@ -190,7 +190,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                         child: Checkbox(
                             checkColor: widget.checkColor,
                             activeColor: widget.activeColor ??
-                                Theme.of(context).toggleableActiveColor,
+                                Theme.of(context).colorScheme.primary,
                             shape: widget.checkShape ?? const StadiumBorder(),
                             value: e['isChecked'],
                             onChanged: (value) {
@@ -201,7 +201,7 @@ class _FlutGroupedButtonsState<T> extends State<FlutGroupedButtons<T>> {
                         shape: widget.checkShape,
                         checkColor: widget.checkColor,
                         activeColor: widget.activeColor ??
-                            Theme.of(context).toggleableActiveColor,
+                            Theme.of(context).colorScheme.primary,
                         value: e['isChecked'],
                         onChanged: (value) {
                           onChangedCheckBox(value, e);
